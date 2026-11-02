@@ -1,0 +1,47 @@
+// =========================================================
+// Design tokens: colours, font, sizes and breakpoints.
+// Every other partial reads these with `@use "tokens" as *;`
+// so changing a value here updates the whole site.
+// =========================================================
+
+// ---------- Palette (taken from the original site) ----------
+$teal: #486573;       // accents: heading underlines, labels, hover states
+$teal-dark: #22495a;  // headings, links, main buttons, footer
+$sand: #f7f0ec;       // soft section backgrounds, cards
+$sand-dark: #e8dcd5;  // borders and decorative quote marks
+$text: #414141;
+$white: #fff;
+
+// ---------- Font ----------
+// Raleway is self-hosted: see _fonts.scss and static/fonts/raleway/.
+$font: "Raleway", "Helvetica Neue", Arial, sans-serif;
+
+// ---------- Layout ----------
+$max-width: 1120px;      // widest the content gets
+$text-width: 46rem;      // comfortable line length for long text
+$gutter: 1.25rem;        // gap at the screen edges
+$header-height: 4.75rem; // keeps anchor links (#servicios…) clear of the sticky header
+
+// ---------- Breakpoints ----------
+$mobile: 760px;
+
+// Styles that only apply on small screens.
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+// Styles that only apply on screens wider than a phone.
+@mixin desktop {
+  @media (min-width: $mobile + 1) {
+    @content;
+  }
+}
+
+// A solid sand-coloured block peeking out from behind a photo.
+@mixin photo-offset($size: 2rem, $color: $sand) {
+  box-shadow: $size $size 0 $color;
+  margin-right: $size;
+  margin-bottom: $size;
+}

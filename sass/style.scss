@@ -1,0 +1,23 @@
+// =========================================================
+// Lourdes Madero Psicología — stylesheet entry point.
+//
+// Zola compiles this file to /style.css (compile_sass = true
+// in config.toml). The styles live in the partials below,
+// one per part of the site. Files starting with "_" are
+// partials: they are only included from here.
+//
+//   _tokens   colours, font, sizes, breakpoints  ← start here
+//   _fonts    self-hosted Raleway
+//   _base     element defaults, buttons, section titles
+//   _header   top bar and menu
+//   _home     home page sections
+//   _page     "Sobre mí" and other single pages
+//   _footer   contact block
+// =========================================================
+
+@use "fonts";
+@use "base";
+@use "header";
+@use "home";
+@use "page";
+@use "footer";

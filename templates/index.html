@@ -1,0 +1,87 @@
+{#
+  Home page. Its text comes from content/_index.md:
+    - section.extra.*  -> the values in its front matter (between the +++ lines)
+    - section.content  -> its Markdown body, already converted to HTML
+#}
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }} | {{ section.title }}{% endblock %}
+
+{% block content %}
+{% set home = section.extra %}
+
+{# ---- Hero ---- #}
+<section class="section section--sand">
+  <div class="container hero">
+    <img src="/images/lourdes-sofa.jpg" alt="Lourdes Madero sentada en un sofá">
+    <div>
+      <h1 class="section-title">{{ home.hero_title }}</h1>
+      <p>{{ home.hero_subtitle }}</p>
+    </div>
+  </div>
+</section>
+
+{# ---- Conóceme ---- #}
+<section class="section">
+  <div class="container intro">
+    <h2 class="section-title">Conóceme</h2>
+    <div class="intro-text">
+      {{ section.content | safe }}
+      <a class="link-more" href="/acerca-de/">Leer más sobre mí</a>
+    </div>
+  </div>
+</section>
+
+{# ---- En qué me especializo ---- #}
+<section class="section section--sand">
+  <div class="container">
+    <h2 class="section-title section-title--center">En qué me especializo</h2>
+    <ul class="specialty-list">
+      {% for specialty in home.specialties %}
+      <li>
+        <img src="/images/iconos/{{ specialty.icon }}" alt="" loading="lazy">
+        {{ specialty.name }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ---- Servicios ---- #}
+<section class="section" id="servicios">
+  <div class="container">
+    <h2 class="section-title section-title--center">Servicios</h2>
+    <div class="service-list">
+      {% for service in home.services %}
+      <article class="service">
+        <img src="/images/{{ service.image }}" alt="" loading="lazy">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.duration }} · <strong>{{ service.price }}</strong></p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---- Quote ---- #}
+<section class="quote">
+  <div class="container">
+    <blockquote>{{ home.quote }}</blockquote>
+  </div>
+</section>
+
+{# ---- Opiniones ---- #}
+<section class="section" id="opiniones">
+  <div class="container">
+    <h2 class="section-title section-title--center">Opiniones</h2>
+    <div class="testimonial-list">
+      {% for testimonial in home.testimonials %}
+      <figure class="testimonial">
+        <blockquote>{{ testimonial.text }}</blockquote>
+        <figcaption>{{ testimonial.author }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,80 @@
+// =========================================================
+// Footer (templates/base.html): contact details, shown on
+// every page.
+// =========================================================
+@use "tokens" as *;
+
+.site-footer {
+  padding-top: clamp(4rem, 8vw, 5.5rem);
+  background: $teal-dark;
+  color: $white;
+
+  h2 {
+    color: $white;
+  }
+
+  a:not(.button) {
+    color: $white;
+  }
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-cta p {
+  max-width: 24rem;
+  font-size: 1.125rem;
+}
+
+// Label / value pairs: "WhatsApp  +34 …"
+.contact-list {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+
+  dt {
+    color: $sand-dark;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0.25rem 0 0;
+    font-size: 1.125rem;
+  }
+
+  a {
+    text-decoration-color: rgba($white, 0.4);
+
+    &:hover {
+      text-decoration-color: $white;
+    }
+  }
+}
+
+.map-link {
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  font-size: 0.85rem;
+
+  // The line is on the paragraph so it lines up with the text above.
+  p {
+    margin: 0;
+    padding-block: 1.5rem;
+    border-top: 1px solid rgba($white, 0.15);
+    color: rgba($white, 0.75);
+  }
+}

@@ -1,0 +1,25 @@
+{#
+  Template for single pages such as content/acerca-de.md.
+  page.content is the page's Markdown, already converted to HTML.
+  There is no "book" button at the end: the contact footer follows directly.
+#}
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block content %}
+<article>
+  <header class="page-header">
+    <div class="container page-header-inner">
+      {% if page.extra.subtitle %}
+      <p class="eyebrow">{{ page.extra.subtitle }}</p>
+      {% endif %}
+      <h1>{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <div class="section container page-body">
+    {{ page.content | safe }}
+  </div>
+</article>
+{% endblock %}

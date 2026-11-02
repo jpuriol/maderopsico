@@ -1,0 +1,25 @@
+// =========================================================
+// Raleway, served from our own server (static/fonts/raleway/)
+// instead of Google Fonts. Licence: SIL Open Font License,
+// see static/fonts/raleway/OFL.txt.
+//
+// Each file is a "variable" font: one file holds every weight
+// from 300 (light) to 700 (bold). The Latin subset covers
+// Spanish accents, ñ, ¿, ¡ and €.
+// =========================================================
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/raleway/raleway-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/raleway/raleway-italic-latin.woff2") format("woff2");
+}

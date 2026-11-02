@@ -1,0 +1,3 @@
+# Prettier doesn't understand Zola's Tera tags ({% %}, {# #}) and rewraps them,
+# which can break the templates (e.g. a line break inside a quoted string).
+templates/

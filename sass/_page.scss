@@ -1,0 +1,53 @@
+// =========================================================
+// Single pages such as "Sobre mí" (templates/page.html).
+// The body is Markdown from content/, so these rules style
+// plain elements (h2, p, img) inside .page-body.
+// =========================================================
+@use "tokens" as *;
+
+.page-header {
+  padding-block: clamp(3rem, 7vw, 5rem);
+  background: $sand;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.page-header-inner,
+.page-body {
+  max-width: calc(#{$text-width} + 16rem);
+}
+
+.page-body {
+  h2 {
+    clear: both; // each section starts below the previous photo
+    margin-top: 3.5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // Photos float to the right so the text wraps around them.
+  img {
+    float: right;
+    width: 40%;
+    margin-left: 3rem;
+    @include photo-offset(1.5rem);
+
+    @include mobile {
+      float: none;
+      width: auto;
+      margin-left: 0;
+      @include photo-offset(1rem);
+    }
+  }
+
+  // Clear the last floated photo so it doesn't spill into the footer.
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
