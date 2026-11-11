@@ -1,5 +1,6 @@
 // =========================================================
-// Single pages such as "Sobre mí" (templates/page.html).
+// Single pages such as "Sobre mí" (templates/page.html), and
+// the "Servicios" page (templates/servicios.html).
 // The body is Markdown from content/, so these rules style
 // plain elements (h2, p, img) inside .page-body.
 // =========================================================
@@ -50,4 +51,31 @@
     display: block;
     clear: both;
   }
+}
+
+// "Formatos y tarifas" on the "Servicios" page: one row per service,
+// name on the left and "duration · price" on the right.
+.price-list {
+  max-width: $text-width;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.25rem 1.5rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid $rose;
+
+    &:first-child {
+      border-top: 1px solid $rose;
+    }
+  }
+}
+
+.price-list-name {
+  color: $brown;
+  font-weight: 600;
 }

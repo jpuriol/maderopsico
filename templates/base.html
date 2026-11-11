@@ -25,7 +25,7 @@
 
     <nav class="main-nav" aria-label="Menú principal">
       <a href="/acerca-de/" {% if current_path == "/acerca-de/" %}aria-current="page"{% endif %}>Sobre mí</a>
-      <a href="/#servicios">Servicios</a>
+      <a href="/servicios/" {% if current_path == "/servicios/" %}aria-current="page"{% endif %}>Servicios</a>
       <a href="/#opiniones">Opiniones</a>
     </nav>
 

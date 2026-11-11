@@ -17,21 +17,23 @@ zola build   # writes the final site to public/
 | `content/_index.md` | **Home page**: page title and hero text, plus the "Conóceme" Markdown. |
 | `content/cita.md` | The quote shown on the home page. |
 | `content/especialidades/` | "En qué me especializo": one folder per item (name and icon). |
-| `content/servicios/` | "Servicios": one folder per service (name, duration, **price**, image). |
+| `content/servicios/` | The "Servicios" page, published at `/servicios/` (the old `/programas/` URL redirects there). Its `_index.md` holds the page title, subtitle and the "La primera sesión" text; its sub-folders are the services (name, duration, **price**, image), shown as cards on the home page and as the price list on `/servicios/` (`image` is only used by the home cards). |
 | `content/opiniones/` | Testimonials: one folder per person (name and text). |
 | `content/acerca-de.md` | The "Sobre mí" page, in Markdown. |
 | `templates/base.html` | Layout shared by every page: header, menu and the contact footer. |
 | `templates/index.html` | Layout of the home page. |
 | `templates/page.html` | Layout of single pages (used by "Sobre mí"). |
+| `templates/servicios.html` | Layout of the "Servicios" page: same look as "Sobre mí", plus the price list. |
 | `sass/` | The styles, written in Sass. Zola compiles `sass/style.scss` to `/style.css`. Colours, font and sizes are in `sass/_tokens.scss`; the other files are one per part of the site (header, home, page, footer). |
 | `static/fonts/raleway/` | The Raleway font, hosted with the site (no Google Fonts requests). `OFL.txt` is its licence. |
 | `static/images/` | Photos and icons. |
 
 Rule of thumb: **text lives in `content/`, layout lives in `templates/`**.
 
-`content/cita.md` and the `especialidades/`, `servicios/` and `opiniones/`
-folders are content only: they have `render = false`, so they are not published
-as pages of their own. Any template can reuse them with `get_section` (folders)
+`content/cita.md`, the `especialidades/` and `opiniones/` folders and the
+service sub-folders in `servicios/` are content only: they have `render = false`,
+so they are not published as pages of their own (`servicios/_index.md` itself is
+the published "Servicios" page). Any template can reuse them with `get_section` (folders)
 or `get_page` (`cita.md`). Items in a folder are shown in order of their `weight`.
 
 ## Common edits

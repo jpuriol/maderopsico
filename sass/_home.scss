@@ -137,6 +137,12 @@
     }
 }
 
+// Link to the "Servicios" page, centred under the cards.
+.service-more {
+    margin: 2.5rem 0 0;
+    text-align: center;
+}
+
 // ---------- Quote ----------
 .quote {
     padding-block: clamp(6rem, 14vw, 9rem);

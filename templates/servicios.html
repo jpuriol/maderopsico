@@ -1,0 +1,40 @@
+{#
+  Template for the "Servicios" page (content/servicios/_index.md).
+  Same structure as page.html ("Sobre mí"), but it is a section, so it reads
+  section.* instead of page.*:
+    - section.content is the Markdown of _index.md ("La primera sesión"),
+      already converted to HTML; it comes first
+    - the "Formatos y tarifas" price list is built from the item folders in
+      content/servicios/, in order of weight
+#}
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} | {{ config.title }}{% endblock %}
+
+{% block content %}
+<article>
+  <header class="page-header">
+    <div class="container page-header-inner">
+      {% if section.extra.subtitle %}
+      <p class="eyebrow">{{ section.extra.subtitle }}</p>
+      {% endif %}
+      <h1>{{ section.title }}</h1>
+    </div>
+  </header>
+
+  <div class="section container page-body">
+    {{ section.content | safe }}
+
+    <h2>Formatos y tarifas</h2>
+    <ul class="price-list">
+      {% for path in section.subsections %}
+      {% set service = get_section(path=path) %}
+      <li>
+        <span class="price-list-name">{{ service.title }}</span>
+        <span>{{ service.extra.duration }} · <strong>{{ service.extra.price }}</strong></span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</article>
+{% endblock %}

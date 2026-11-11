@@ -2,10 +2,15 @@
   Home page. Its text comes from content/:
     - _index.md         -> hero text (section.extra.*) and the "Conóceme"
                            Markdown (section.content, already converted to HTML)
-    - especialidades/, servicios/, opiniones/ -> one sub-folder per item, read
+    - especialidades/, opiniones/ -> one sub-folder per item, read
                            with get_section and shown in order of weight
+    - servicios/        -> the service cards, one sub-folder per service, read
+                           with get_section. servicios/_index.md itself is the
+                           published /servicios/ page; only its item folders
+                           are content-only.
     - cita.md           -> the quote, read with get_page
-  Those files have render = false: they are content only, not published pages.
+  Apart from servicios/_index.md, those files have render = false: they are
+  content only, not published pages.
 #}
 {% extends "base.html" %}
 
@@ -68,6 +73,7 @@
       </article>
       {% endfor %}
     </div>
+    <p class="service-more"><a class="link-more" href="/servicios/">Leer más sobre los servicios</a></p>
   </div>
 </section>
 
