@@ -155,7 +155,11 @@
         font-weight: 500;
         line-height: 1.35;
         text-align: center;
-        white-space: pre-line; // keeps the line breaks from content/_index.md
+
+        p {
+            margin: 0;
+            white-space: pre-line; // keeps the line breaks from content/cita.md
+        }
     }
 }
 
