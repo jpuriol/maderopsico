@@ -3,7 +3,7 @@ title = "Sobre mí"
 template = "acerca-de.html"
 
 [extra]
-subtitle = "Psicóloga y terapeuta en Madrid"
+subtitle = "Psicóloga Sanitaria (M-36115)"
 image = "lourdes-retrato.jpg"
 image_alt = "Retrato de Lourdes Madero"
 +++
