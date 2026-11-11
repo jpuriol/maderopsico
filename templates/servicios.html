@@ -4,8 +4,9 @@
   section.* instead of page.*:
     - section.content is the Markdown of _index.md ("La primera sesión"),
       already converted to HTML; it comes first
-    - the "Formatos y tarifas" price list is built from the item folders in
-      content/servicios/, in order of weight
+    - "Formatos y tarifas" has one block per item folder in content/servicios/,
+      in order of weight: title, duration, price and the folder's text
+    - [extra] image / image_alt is the photo, on the left of the text
 #}
 {% extends "base.html" %}
 
@@ -22,19 +23,23 @@
     </div>
   </header>
 
-  <div class="section container page-body">
-    {{ section.content | safe }}
+  <div class="section container page-body{% if section.extra.image %} page-body--photo{% endif %}">
+    <div class="page-text">
+      {{ section.content | safe }}
 
-    <h2>Formatos y tarifas</h2>
-    <ul class="price-list">
+      <h2>Formatos y tarifas</h2>
       {% for path in section.subsections %}
       {% set service = get_section(path=path) %}
-      <li>
-        <span class="price-list-name">{{ service.title }}</span>
-        <span>{{ service.extra.duration }} · <strong>{{ service.extra.price }}</strong></span>
-      </li>
+      <section class="format">
+        <h3>{{ service.title }}</h3>
+        <p class="format-meta">{{ service.extra.duration }} · <strong>{{ service.extra.price }}</strong></p>
+        {{ service.content | safe }}
+      </section>
       {% endfor %}
-    </ul>
+    </div>
+    {% if section.extra.image %}
+    <img class="page-photo" src="/images/{{ section.extra.image }}" alt="{{ section.extra.image_alt }}">
+    {% endif %}
   </div>
 </article>
 {% endblock %}

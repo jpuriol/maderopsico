@@ -1,8 +1,9 @@
 +++
 # "Servicios" page, published at /servicios/ (layout: templates/servicios.html).
 # The old site's URL, /programas/, redirects here.
-# The sub-folders are the services: shown as cards on the home page and as
-# the price list on this page.
+# Each sub-folder is a service, shown as a card on the home page and as a
+# "Formatos y tarifas" block (title, duration, price and the folder's text)
+# on this page.
 # They are content only: one folder per service, shown in order of their weight
 # (1 first). Every item needs render = false, or Zola publishes an empty
 # placeholder page for it.
@@ -14,11 +15,11 @@ aliases = ["/programas/"]
 
 [extra]
 subtitle = "Te acompaño desde diferentes formatos"
+image = "botella-vasos.jpg"
+image_alt = "Una botella de agua y dos vasos en la consulta"
 +++
 
 ## La primera sesión
-
-![Lourdes Madero tomando notas en la consulta](/images/terapia-individual.jpg)
 
 Una parte clave de mi trabajo es la evaluación. Considero esencial reconocer qué
 necesidades tiene la persona que tengo delante.

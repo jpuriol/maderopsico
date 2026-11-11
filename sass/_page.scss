@@ -2,7 +2,8 @@
 // Single pages such as "Sobre mí" (templates/page.html), and
 // the "Servicios" page (templates/servicios.html).
 // The body is Markdown from content/, so these rules style
-// plain elements (h2, p, img) inside .page-body.
+// plain elements inside .page-body. The page's photo comes
+// from [extra] image and sits in a column of its own.
 // =========================================================
 @use "tokens" as *;
 
@@ -22,60 +23,69 @@
 
 .page-body {
   h2 {
-    clear: both; // each section starts below the previous photo
     margin-top: 3.5rem;
 
     &:first-child {
       margin-top: 0;
     }
   }
-
-  // Photos float to the right so the text wraps around them.
-  img {
-    float: right;
-    width: 40%;
-    margin-left: 3rem;
-    @include photo-offset(1.5rem);
-
-    @include mobile {
-      float: none;
-      width: auto;
-      margin-left: 0;
-      @include photo-offset(1rem);
-    }
-  }
-
-  // Clear the last floated photo so it doesn't spill into the footer.
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
 }
 
-// "Formatos y tarifas" on the "Servicios" page: one row per service,
-// name on the left and "duration · price" on the right.
-.price-list {
-  max-width: $text-width;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+// Page with a photo ([extra] image): photo on the left, text on the right.
+// The photo comes after the text in the HTML, so on phones it goes below it.
+.page-body--photo {
+  @include desktop {
+    display: grid;
+    grid-template-columns: 40% minmax(0, 1fr);
+    column-gap: 3rem;
+    align-items: start;
 
-  li {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.25rem 1.5rem;
-    padding-block: 1rem;
-    border-bottom: 1px solid $rose;
+    .page-text {
+      grid-column: 2;
+    }
 
-    &:first-child {
-      border-top: 1px solid $rose;
+    .page-photo {
+      grid-column: 1;
+      grid-row: 1;
     }
   }
 }
 
-.price-list-name {
+.page-photo {
+  width: calc(100% - 1.5rem); // leaves room for the rose block
+  @include photo-offset(1.5rem);
+
+  // Stays in view while the text beside it scrolls.
+  @include desktop {
+    position: sticky;
+    top: calc(#{$header-height} + 2rem);
+  }
+
+  @include mobile {
+    width: calc(100% - 1rem);
+    margin-top: 1rem;
+    @include photo-offset(1rem);
+  }
+}
+
+// "Formatos y tarifas" on the "Servicios" page: one block per service.
+.format {
+  padding-block: 1.5rem;
+  border-top: 1px solid $rose;
+
+  h3 {
+    margin-bottom: 0.25rem;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.format-meta {
   color: $brown;
-  font-weight: 600;
 }

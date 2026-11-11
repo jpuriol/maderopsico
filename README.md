@@ -17,12 +17,12 @@ zola build   # writes the final site to public/
 | `content/_index.md` | **Home page**: page title and hero text, plus the "Conóceme" Markdown. |
 | `content/cita.md` | The quote shown on the home page. |
 | `content/especialidades/` | "En qué me especializo": one folder per item (name and icon). |
-| `content/servicios/` | The "Servicios" page, published at `/servicios/` (the old `/programas/` URL redirects there). Its `_index.md` holds the page title, subtitle and the "La primera sesión" text; its sub-folders are the services (name, duration, **price**, image), shown as cards on the home page and as the price list on `/servicios/` (`image` is only used by the home cards). |
+| `content/servicios/` | The "Servicios" page, published at `/servicios/` (the old `/programas/` URL redirects there). Its `_index.md` holds the page title, subtitle and the "La primera sesión" text; its sub-folders are the services (name, duration, **price**, image), shown as cards on the home page and in "Formatos y tarifas" on `/servicios/`. The text in each service folder is its description on `/servicios/`; `image` is only used by the home cards. |
 | `content/opiniones/` | Testimonials: one folder per person (name and text). |
 | `content/acerca-de.md` | The "Sobre mí" page, in Markdown. |
 | `templates/base.html` | Layout shared by every page: header, menu and the contact footer. |
 | `templates/index.html` | Layout of the home page. |
-| `templates/page.html` | Layout of single pages (used by "Sobre mí"). |
+| `templates/page.html` | Layout of single pages (used by "Sobre mí"): the `[extra] image` on the left, the text on the right. |
 | `templates/servicios.html` | Layout of the "Servicios" page: same look as "Sobre mí", plus the price list. |
 | `sass/` | The styles, written in Sass. Zola compiles `sass/style.scss` to `/style.css`. Colours, font and sizes are in `sass/_tokens.scss`; the other files are one per part of the site (header, home, page, footer). |
 | `static/fonts/raleway/` | The Raleway font, hosted with the site (no Google Fonts requests). `OFL.txt` is its licence. |
@@ -39,6 +39,11 @@ or `get_page` (`cita.md`). Items in a folder are shown in order of their `weight
 ## Common edits
 
 - **Change a price**: edit `price` in `content/servicios/<service>/_index.md`.
+- **Change a service description**: edit the text below the closing `+++` in
+  `content/servicios/<service>/_index.md`.
+- **Change a page's photo**: edit `image` (a file in `static/images/`) and
+  `image_alt` under `[extra]` in `content/acerca-de.md` or
+  `content/servicios/_index.md`.
 - **Add a testimonial**: copy a folder in `content/opiniones/`, then edit its
   `title` (the author), `weight` (its position) and the text. Keep
   `render = false`: without it Zola publishes an empty placeholder page.

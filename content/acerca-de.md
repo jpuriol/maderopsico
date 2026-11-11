@@ -4,11 +4,11 @@ title = "Sobre mí"
 
 [extra]
 subtitle = "Psicóloga y terapeuta en Madrid"
+image = "lourdes-retrato.jpg"   # file in static/images/, shown at the left of the text
+image_alt = "Retrato de Lourdes Madero"
 +++
 
 ## Nacemos para amar y ser amados
-
-![Retrato de Lourdes Madero](/images/lourdes-retrato.jpg)
 
 Si tuviera que elegir tres adjetivos para definirme creo que serían: cercana,
 paciente y curiosa.
@@ -30,8 +30,6 @@ Desde el espacio que ofrezco, te acompaño a reconocer tu historia y a
 profundizar en ella.
 
 ## Enfoque terapéutico
-
-![Una botella de agua y dos vasos en la consulta](/images/botella-vasos.jpg)
 
 Considero integrador mi enfoque terapéutico. Estudié el Máster General Sanitario
 en la Universidad Pontificia de Comillas, donde exploré diferentes estilos
