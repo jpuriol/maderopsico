@@ -50,12 +50,12 @@
 .intro-text {
     max-width: $text-width;
     padding-left: clamp(2rem, 5vw, 4rem);
-    border-left: 1px solid $sand-dark;
+    border-left: 1px solid $rose;
 
     // The first paragraph (title and speciality) reads as a short statement.
     p:first-of-type {
         margin-bottom: 1.75rem;
-        color: $teal-dark;
+        color: $brown;
         font-size: clamp(1.3rem, 2.2vw, 1.6rem);
         font-weight: 300;
         line-height: 1.45;
@@ -88,7 +88,7 @@
         max-width: 14rem;
         padding: 2rem 1rem 1.75rem;
         background: $white;
-        color: $teal-dark;
+        color: $brown;
         font-weight: 500;
         text-align: center;
     }
@@ -141,10 +141,10 @@
 .quote {
     padding-block: clamp(6rem, 14vw, 9rem);
     color: $white;
-    // A strong teal layer leaves the photo as a faint texture, so the text
+    // A strong brown layer leaves the photo as a faint texture, so the text
     // stays readable even where it crosses the hands.
     background:
-        linear-gradient(rgba($teal-dark, 0.9), rgba($teal-dark, 0.9)),
+        linear-gradient(rgba($brown, 0.9), rgba($brown, 0.9)),
         url("/images/manos-cielo.jpg") center / cover;
 
     blockquote {
@@ -175,7 +175,7 @@
         content: "“";
         display: block;
         height: 3.25rem;
-        color: $sand-dark;
+        color: $rose;
         font-size: 6rem;
         font-weight: 500;
         line-height: 1;
@@ -186,12 +186,12 @@
     }
 
     figcaption {
-        color: $teal-dark;
+        color: $brown;
         font-weight: 600;
 
         &::before {
             content: "— ";
-            color: $teal;
+            color: $clay;
         }
     }
 }

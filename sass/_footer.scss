@@ -6,7 +6,7 @@
 
 .site-footer {
   padding-top: clamp(4rem, 8vw, 5.5rem);
-  background: $teal-dark;
+  background: $brown;
   color: $white;
 
   h2 {
@@ -15,6 +15,11 @@
 
   a:not(.button) {
     color: $white;
+  }
+
+  // The default brown outline would not show on the brown background.
+  :focus-visible {
+    outline-color: $sand;
   }
 }
 
@@ -41,7 +46,7 @@
   margin: 0;
 
   dt {
-    color: $sand-dark;
+    color: $rose;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.14em;

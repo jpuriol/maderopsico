@@ -4,13 +4,15 @@
 // so changing a value here updates the whole site.
 // =========================================================
 
-// ---------- Palette (taken from the original site) ----------
-$teal: #486573;       // accents: heading underlines, labels, hover states
-$teal-dark: #22495a;  // headings, links, main buttons, footer
-$sand: #f7f0ec;       // soft section backgrounds, cards
-$sand-dark: #e8dcd5;  // borders and decorative quote marks
-$text: #414141;
-$white: #fff;
+// ---------- Palette (warm colours taken from the photos on the "Sobre mí" page) ----------
+$brown: #4e2d22;      // headings, links, footer, quote overlay, focus outline
+$clay: #aa3f2a;       // accents: buttons, labels, heading underlines, icons
+                      // (the icons in static/images/iconos/ are PNGs painted in this colour)
+$clay-dark: #87301f;  // button hover
+$rose: #e6c0b6;       // borders, blocks behind photos, footer labels, quote marks
+$sand: #f6eadd;       // soft section backgrounds, cards
+$text: #3b302c;       // body text
+$white: #fffaf4;      // page background and text on dark colours (a warm white, not pure white)
 
 // ---------- Font ----------
 // Raleway is self-hosted: see _fonts.scss and static/fonts/raleway/.
@@ -39,8 +41,8 @@ $mobile: 760px;
   }
 }
 
-// A solid sand-coloured block peeking out from behind a photo.
-@mixin photo-offset($size: 2rem, $color: $sand) {
+// A solid rose-coloured block peeking out from behind a photo.
+@mixin photo-offset($size: 2rem, $color: $rose) {
   box-shadow: $size $size 0 $color;
   margin-right: $size;
   margin-bottom: $size;
