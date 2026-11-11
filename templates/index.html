@@ -1,104 +1,62 @@
-{#
-  Home page. Its text comes from content/:
-    - _index.md         -> hero text (section.extra.*) and the "Conóceme"
-                           Markdown (section.content, already converted to HTML)
-    - especialidades/, opiniones/ -> one sub-folder per item, read
-                           with get_section and shown in order of weight
-    - servicios/        -> the service cards, one sub-folder per service, read
-                           with get_section. servicios/_index.md itself is the
-                           published /servicios/ page; only its item folders
-                           are content-only.
-    - cita.md           -> the quote, read with get_page
-  Apart from servicios/_index.md, those files have render = false: they are
-  content only, not published pages.
-#}
 {% extends "base.html" %}
 
 {% block title %}{{ config.title }} | {{ section.title }}{% endblock %}
 
 {% block content %}
-{% set home = section.extra %}
-
-{# ---- Hero ---- #}
-<section class="section section--sand">
-  <div class="container hero">
-    <img src="/images/lourdes-sofa.jpg" alt="Lourdes Madero sentada en un sofá">
-    <div>
-      <h1 class="section-title">{{ home.hero_title }}</h1>
-      <p>{{ home.hero_subtitle }}</p>
-    </div>
+<section class="band sand hero">
+  <img src="/images/{{ section.extra.image }}" alt="{{ section.extra.image_alt }}">
+  <div>
+    <h1 class="section-title">{{ section.extra.heading }}</h1>
+    <p>{{ section.extra.subtitle }}</p>
   </div>
 </section>
 
-{# ---- Conóceme ---- #}
-<section class="section">
-  <div class="container intro">
-    <h2 class="section-title">Conóceme</h2>
-    <div class="intro-text">
-      {{ section.content | safe }}
-      <a class="link-more" href="/acerca-de/">Leer más sobre mí</a>
-    </div>
+<section class="band intro">
+  <h2 class="section-title">Conóceme</h2>
+  <div class="intro-text">
+    {{ section.content | safe }}
+    <a class="more" href="/acerca-de/">Leer más sobre mí</a>
   </div>
 </section>
 
-{# ---- En qué me especializo ---- #}
-<section class="section section--sand">
-  <div class="container">
-    <h2 class="section-title section-title--center">En qué me especializo</h2>
-    <ul class="specialty-list">
-      {% set specialties = get_section(path="especialidades/_index.md") %}
-      {% for path in specialties.subsections %}
-      {% set specialty = get_section(path=path) %}
-      <li>
-        <img src="/images/iconos/{{ specialty.extra.icon }}" alt="" loading="lazy">
-        {{ specialty.title }}
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
+<section class="band sand center">
+  <h2 class="section-title">En qué me especializo</h2>
+  <ul class="specialties">
+    {% for specialty in section.extra.specialties %}
+    <li>
+      <img src="/images/iconos/{{ specialty.icon }}" alt="" loading="lazy">
+      {{ specialty.name }}
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 
-{# ---- Servicios ---- #}
-<section class="section" id="servicios">
-  <div class="container">
-    <h2 class="section-title section-title--center">Servicios</h2>
-    <div class="service-list">
-      {% set services = get_section(path="servicios/_index.md") %}
-      {% for path in services.subsections %}
-      {% set service = get_section(path=path) %}
-      <article class="service">
-        <img src="/images/{{ service.extra.image }}" alt="" loading="lazy">
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.extra.duration }} · <strong>{{ service.extra.price }}</strong></p>
-      </article>
-      {% endfor %}
-    </div>
-    <p class="service-more"><a class="link-more" href="/servicios/">Leer más sobre los servicios</a></p>
+<section class="band center" id="servicios">
+  <h2 class="section-title">Servicios</h2>
+  <div class="columns">
+    {% set servicios = get_page(path="servicios.md") %}
+    {% for service in servicios.extra.services %}
+    <article class="service">
+      <img src="/images/{{ service.image }}" alt="" loading="lazy">
+      <h3>{{ service.name }}</h3>
+      <p>{{ service.duration }} · <strong>{{ service.price }}</strong></p>
+    </article>
+    {% endfor %}
   </div>
+  <p><a class="more" href="/servicios/">Leer más sobre los servicios</a></p>
 </section>
 
-{# ---- Quote ---- #}
-<section class="quote">
-  <div class="container">
-    {% set quote = get_page(path="cita.md") %}
-    <blockquote>{{ quote.content | safe }}</blockquote>
-  </div>
-</section>
+<blockquote class="band quote">{{ section.extra.quote | linebreaksbr | safe }}</blockquote>
 
-{# ---- Opiniones ---- #}
-<section class="section" id="opiniones">
-  <div class="container">
-    <h2 class="section-title section-title--center">Opiniones</h2>
-    <div class="testimonial-list">
-      {% set testimonials = get_section(path="opiniones/_index.md") %}
-      {% for path in testimonials.subsections %}
-      {% set testimonial = get_section(path=path) %}
-      <figure class="testimonial">
-        <blockquote>{{ testimonial.content | safe }}</blockquote>
-        <figcaption>{{ testimonial.title }}</figcaption>
-      </figure>
-      {% endfor %}
-    </div>
+<section class="band center" id="opiniones">
+  <h2 class="section-title">Opiniones</h2>
+  <div class="columns">
+    {% for testimonial in section.extra.testimonials %}
+    <figure class="testimonial">
+      <blockquote>{{ testimonial.text }}</blockquote>
+      <figcaption>{{ testimonial.author }}</figcaption>
+    </figure>
+    {% endfor %}
   </div>
 </section>
 {% endblock %}

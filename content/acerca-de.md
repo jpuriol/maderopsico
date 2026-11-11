@@ -1,10 +1,10 @@
 +++
-# "Sobre mí" page, published at /acerca-de/ (same URL as the original site).
 title = "Sobre mí"
+template = "acerca-de.html"
 
 [extra]
 subtitle = "Psicóloga y terapeuta en Madrid"
-image = "lourdes-retrato.jpg"   # file in static/images/, shown at the left of the text
+image = "lourdes-retrato.jpg"
 image_alt = "Retrato de Lourdes Madero"
 +++
 

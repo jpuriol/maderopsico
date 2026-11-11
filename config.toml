@@ -1,21 +1,10 @@
-# The URL the site will be published at.
 base_url = "https://www.lourdesmaderopsico.com"
-
 title = "Lourdes Madero Psicología"
 description = "Psicóloga sanitaria en Madrid y online. Terapia individual, de pareja y familiar."
 default_language = "es"
-
-# Styles are written in Sass (sass/style.scss) and compiled by Zola to /style.css.
 compile_sass = true
-build_search_index = false
 
-[markdown]
-highlight_code = false
-
-# Values under [extra] are free-form: templates read them as `config.extra.<name>`.
-# Contact details live here so they only need to be changed in one place.
 [extra]
 email = "lurmagalpsicologia@gmail.com"
-whatsapp = "34644083502"      # Country code + number, no "+" or spaces (the format wa.me links need)
-phone = "+34 644 083 502"     # The same number, formatted for people to read
+whatsapp = "34644083502" # country code + number, no "+" or spaces: the format wa.me links need
 address = "Calle Evaristo San Miguel, 22, Madrid"

@@ -1,23 +1,510 @@
-// =========================================================
-// Lourdes Madero Psicología — stylesheet entry point.
-//
-// Zola compiles this file to /style.css (compile_sass = true
-// in config.toml). The styles live in the partials below,
-// one per part of the site. Files starting with "_" are
-// partials: they are only included from here.
-//
-//   _tokens   colours, font, sizes, breakpoints  ← start here
-//   _fonts    self-hosted Raleway
-//   _base     element defaults, buttons, section titles
-//   _header   top bar and menu
-//   _home     home page sections
-//   _page     "Sobre mí" and other single pages
-//   _footer   contact block
-// =========================================================
+@use "variables" as *;
 
-@use "fonts";
-@use "base";
-@use "header";
-@use "home";
-@use "page";
-@use "footer";
+// ---------- Fonts ----------
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/raleway/raleway-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/fonts/raleway/raleway-italic-latin.woff2") format("woff2");
+}
+
+// ---------- Elements ----------
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: $header-height;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  font-size: $font-body;
+  line-height: 1.7;
+  // Raleway's default numbers have uneven heights; these line up (prices, year).
+  font-variant-numeric: lining-nums;
+  color: $text;
+  background: $white;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  margin: 0 0 $space-s;
+  color: $brown;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: $font-h1;
+}
+
+h2 {
+  font-size: $font-h2;
+}
+
+h3 {
+  margin-bottom: $space-xs;
+  font-size: $font-h3;
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 $space-m;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  color: $brown;
+  text-underline-offset: 0.2em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 2px solid $brown;
+  outline-offset: 3px;
+}
+
+// ---------- Shared pieces ----------
+// A band is a full-width strip of the page. Its side padding grows on wide
+// screens, so its content is centred and never wider than $page-width.
+.band {
+  padding: $space-section max($space-m, calc(50% - $page-width / 2));
+}
+
+.narrow {
+  padding-inline: max($space-m, calc(50% - $article-width / 2));
+}
+
+.sand {
+  background: $sand;
+}
+
+.section-title {
+  margin-bottom: $space-xl;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 2px;
+    margin-top: $space-s;
+    background: $clay;
+  }
+}
+
+.center {
+  text-align: center;
+
+  .section-title::after {
+    margin-inline: auto;
+  }
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: $space-xl;
+  align-items: start;
+}
+
+.label {
+  display: block;
+  color: $clay;
+  font-size: $font-label;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  padding: $space-s $space-l;
+  border-radius: 999px;
+  background: $clay;
+  color: $white;
+  font-size: $font-small;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: $clay-dark;
+  }
+}
+
+.more {
+  font-weight: 600;
+  text-decoration: none;
+
+  &::after {
+    content: " →";
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  &:hover::after {
+    transform: translateX($space-xs);
+  }
+}
+
+// ---------- Header ----------
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: $space-xl;
+  min-height: $header-height;
+  padding-block: 0;
+  border-bottom: 1px solid $rose;
+  background: rgba($white, 0.95);
+  backdrop-filter: blur(8px);
+
+  nav {
+    display: flex;
+    gap: $space-l;
+  }
+
+  nav a {
+    padding-block: $space-xs;
+    border-bottom: 2px solid transparent;
+    color: $text;
+    font-size: $font-small;
+    font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+
+    &:hover, &[aria-current="page"] {
+      border-color: $clay;
+      color: $brown;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    position: static;
+    flex-wrap: wrap;
+    gap: $space-s;
+    padding-block: $space-s $space-xs;
+
+    nav {
+      order: 3;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+.brand {
+  margin-right: auto;
+  color: $brown;
+  font-size: $font-h3;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+// ---------- Home page ----------
+.hero {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: $space-section;
+  align-items: center;
+
+  img {
+    width: 100%;
+    max-height: 78vh;
+    object-fit: cover;
+  }
+
+  p {
+    margin: 0;
+    font-size: $font-lead;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: $space-xl;
+  }
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
+  column-gap: $space-xxl;
+  align-items: start;
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.intro-text {
+  max-width: $text-width;
+  padding-left: $space-xxl;
+  border-left: 1px solid $rose;
+
+  p:first-of-type {
+    margin-bottom: $space-l;
+    color: $brown;
+    font-size: $font-h3;
+    font-weight: 300;
+    line-height: 1.45;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+.specialties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-s;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    flex: 1 1 10rem;
+    max-width: 14rem;
+    padding: $space-l $space-s;
+    background: $white;
+    color: $brown;
+    font-weight: 500;
+  }
+
+  img {
+    width: 5.5rem;
+    margin: 0 auto $space-s;
+  }
+
+  @media (max-width: $mobile) {
+    li {
+      flex-basis: calc(50% - $space-s / 2);
+      max-width: calc(50% - $space-s / 2);
+    }
+  }
+}
+
+.service {
+  padding-bottom: $space-m;
+  background: $sand;
+
+  img {
+    width: 100%;
+    margin-bottom: $space-m;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.columns + p {
+  margin: $space-xl 0 0;
+}
+
+.quote {
+  margin: 0;
+  // A strong brown layer leaves the photo as a faint texture, so the text
+  // stays readable even where it crosses the hands.
+  background:
+    linear-gradient(rgba($brown, 0.9), rgba($brown, 0.9)),
+    url("/images/manos-cielo.jpg") center / cover;
+  color: $white;
+  // Small enough on phones for each sentence to fit on one line.
+  font-size: clamp(1rem, 5.4vw, 2.5rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.testimonial {
+  margin: 0;
+  text-align: left;
+
+  &::before {
+    content: "“";
+    display: block;
+    height: 3.25rem;
+    color: $rose;
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  blockquote {
+    margin: 0 0 $space-m;
+  }
+
+  figcaption {
+    color: $brown;
+    font-weight: 600;
+
+    &::before {
+      content: "— ";
+      color: $clay;
+    }
+  }
+}
+
+// ---------- "Sobre mí" and "Servicios" ----------
+.page-header {
+  padding-block: $space-xxl;
+
+  .label {
+    margin-bottom: $space-s;
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.page-body {
+  display: flow-root; // keeps the floated photo inside when the text is shorter than it
+
+  // Line between services. As a block of its own it stops at the photo
+  // instead of running underneath it.
+  hr {
+    display: flow-root;
+    margin: $space-m 0;
+    border: 0;
+    border-top: 1px solid $rose;
+  }
+}
+
+// The photo floats on the left: the text runs beside it and, once the photo
+// ends, across the full width.
+.page-photo {
+  float: left;
+  width: 38%;
+  margin: 0 ($space-xl + $space-m) ($space-l + $space-m) 0;
+  box-shadow: $space-m $space-m 0 $rose; // a rose block peeking out from behind the photo
+}
+
+.page-text {
+  h2:not(:first-child) {
+    margin-top: $space-xxl;
+  }
+
+  ul {
+    padding-left: $space-m;
+  }
+}
+
+.price {
+  color: $brown;
+}
+
+// On phones the photo closes the page, below the text, as it does today.
+@media (max-width: $mobile) {
+  .page-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-photo {
+    order: 1;
+    width: auto;
+    margin: $space-m $space-m $space-m 0;
+  }
+}
+
+// ---------- Footer ----------
+.site-footer {
+  padding-block: $space-xxl 0;
+  background: $brown;
+  color: $white;
+
+  h2, a:not(.button) {
+    color: $white;
+  }
+
+  :focus-visible {
+    outline-color: $sand;
+  }
+
+  .button {
+    background: $sand;
+    color: $brown;
+
+    &:hover {
+      background: $rose;
+    }
+  }
+
+  .columns p {
+    font-size: $font-lead;
+  }
+
+  dl {
+    display: grid;
+    gap: $space-m;
+    margin: 0;
+  }
+
+  .label {
+    color: $rose;
+  }
+
+  dd {
+    margin: $space-xs 0 0;
+    font-size: $font-lead;
+  }
+
+  dd a {
+    text-decoration-color: rgba($white, 0.4);
+
+    &:hover {
+      text-decoration-color: $white;
+    }
+  }
+
+  br + a {
+    font-size: $font-small;
+  }
+}
+
+.copyright {
+  margin: $space-xxl 0 0;
+  padding-block: $space-m;
+  border-top: 1px solid rgba($white, 0.15);
+  color: rgba($white, 0.75);
+  font-size: $font-small;
+}

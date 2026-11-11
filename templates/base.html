@@ -1,7 +1,3 @@
-{#
-  Shared layout for every page: <head>, header and the contact footer.
-  Other templates fill in the "title" and "content" blocks.
-#}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
@@ -16,54 +12,46 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/">
-      <span class="brand-name">Lourdes Madero</span>
-      <span class="brand-role">Psicóloga sanitaria</span>
-    </a>
-
-    <nav class="main-nav" aria-label="Menú principal">
-      <a href="/acerca-de/" {% if current_path == "/acerca-de/" %}aria-current="page"{% endif %}>Sobre mí</a>
-      <a href="/servicios/" {% if current_path == "/servicios/" %}aria-current="page"{% endif %}>Servicios</a>
-      <a href="/#opiniones">Opiniones</a>
-    </nav>
-
-    <a class="button header-cta" href="https://wa.me/{{ config.extra.whatsapp }}">WhatsApp</a>
-  </div>
+<header class="band site-header">
+  <a class="brand" href="/">
+    Lourdes Madero
+    <span class="label">Psicóloga sanitaria</span>
+  </a>
+  <nav aria-label="Menú principal">
+    <a href="/acerca-de/" {% if current_path == "/acerca-de/" %}aria-current="page"{% endif %}>Sobre mí</a>
+    <a href="/servicios/" {% if current_path == "/servicios/" %}aria-current="page"{% endif %}>Servicios</a>
+    <a href="/#opiniones">Opiniones</a>
+  </nav>
+  <a class="button" href="https://wa.me/{{ config.extra.whatsapp }}">WhatsApp</a>
 </header>
 
 <main>
   {% block content %}{% endblock %}
 </main>
 
-<footer class="site-footer" id="contacto">
-  <div class="container footer-inner">
-    <div class="footer-cta">
+<footer class="band site-footer" id="contacto">
+  <div class="columns">
+    <div>
       <h2>Contacto</h2>
       <p>¿Tienes alguna duda? Escríbeme y hablamos.</p>
-      <a class="button button--light" href="https://wa.me/{{ config.extra.whatsapp }}">Escríbeme por WhatsApp</a>
+      <a class="button" href="https://wa.me/{{ config.extra.whatsapp }}">Escríbeme por WhatsApp</a>
     </div>
-
-    <dl class="contact-list">
+    <dl>
       <div>
-        <dt>Email</dt>
+        <dt class="label">Email</dt>
         <dd><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></dd>
       </div>
       <div>
-        <dt>Consulta</dt>
+        <dt class="label">Consulta</dt>
         <dd>
           {{ config.extra.address }}<br>
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query={{ config.extra.address | urlencode }}">Cómo llegar</a>
+          <a href="https://www.google.com/maps/search/?api=1&query={{ config.extra.address | urlencode }}">Cómo llegar</a>
         </dd>
       </div>
     </dl>
   </div>
 
-  <div class="container footer-bottom">
-    <p>© {{ now() | date(format="%Y") }} {{ config.title }}</p>
-  </div>
+  <p class="copyright">© {{ now() | date(format="%Y") }} {{ config.title }}</p>
 </footer>
-
 </body>
 </html>

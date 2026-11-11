@@ -1,16 +1,48 @@
 +++
-# Home page. The layout is in templates/index.html; the hero text is here.
-# The Markdown after the closing +++ is the "Conóceme" section.
-# The other home sections live in their own files:
-#   quote            -> content/cita.md
-#   specialties      -> content/especialidades/<item>/_index.md
-#   services/prices  -> content/servicios/<item>/_index.md
-#   testimonials     -> content/opiniones/<item>/_index.md
 title = "Psicóloga en Madrid y online"
 
 [extra]
-hero_title = "Psicología en el centro de Madrid y sesiones online"
-hero_subtitle = "Descubre, Comprende, Haz camino"
+heading = "Psicología en el centro de Madrid y sesiones online"
+subtitle = "Descubre, Comprende, Haz camino"
+image = "lourdes-sofa.jpg"
+image_alt = "Lourdes Madero sentada en un sofá"
+
+quote = """
+Para curarse hay que dejarse amar
+Para amar hay que dejarse ser"""
+
+specialties = [
+  { name = "Poner luz", icon = "vela.png" },
+  { name = "Reconocer", icon = "lupa.png" },
+  { name = "Empezar a caminar", icon = "pasos.png" },
+  { name = "Tropiezos", icon = "roca.png" },
+  { name = "Mirada global", icon = "planeta.png" },
+]
+
+[[extra.testimonials]]
+author = "Patricia Martínez"
+text = """
+Recomiendo a Lourdes al 100%. Todo son facilidades. Busqué ayuda por un trauma
+en el peor momento de mi vida, lo estoy sacando adelante y me está ayudando en
+todos los aspectos de mi vida. Ve cosas que yo no me planteaba. Pone deberes, lo
+que hace que la terapia siga entre citas, se aprovechan mejor las sesiones. Crea
+un ambiente de seguridad y confort que hace que te sientas muy a gusto. Me hace
+pensar para ver más allá de lo evidente, llegando a la raíz los temas que
+tratamos. Es un aprendizaje constante. La mayoría de mis comportamientos más
+sanos, son gracias a sus indicaciones."""
+
+[[extra.testimonials]]
+author = "Miguel Carbajosa"
+text = """
+Es una gran profesional, siempre está buscando alternativas para que te sientas
+mejor y salgas mucho mejor de lo que entras."""
+
+[[extra.testimonials]]
+author = "Enrique Pérez"
+text = """
+Es una persona con mucha capacidad para ayudarte a superar tus problemas. Es
+directa y a la vez empática. La vocación que siente por su trabajo es palpable y
+redunda en la atención que otorga al paciente."""
 +++
 
 Psicóloga Sanitaria (M-36115) especializada en **Terapia Familiar Sistémica**.

@@ -1,45 +1,23 @@
-{#
-  Template for the "Servicios" page (content/servicios/_index.md).
-  Same structure as page.html ("Sobre mí"), but it is a section, so it reads
-  section.* instead of page.*:
-    - section.content is the Markdown of _index.md ("La primera sesión"),
-      already converted to HTML; it comes first
-    - "Formatos y tarifas" has one block per item folder in content/servicios/,
-      in order of weight: title, duration, price and the folder's text
-    - [extra] image / image_alt is the photo, on the left of the text
-#}
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} | {{ config.title }}{% endblock %}
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<article>
-  <header class="page-header">
-    <div class="container page-header-inner">
-      {% if section.extra.subtitle %}
-      <p class="eyebrow">{{ section.extra.subtitle }}</p>
-      {% endif %}
-      <h1>{{ section.title }}</h1>
-    </div>
-  </header>
+<header class="band narrow sand page-header">
+  <p class="label">{{ page.extra.subtitle }}</p>
+  <h1>{{ page.title }}</h1>
+</header>
 
-  <div class="section container page-body{% if section.extra.image %} page-body--photo{% endif %}">
-    <div class="page-text">
-      {{ section.content | safe }}
-
-      <h2>Formatos y tarifas</h2>
-      {% for path in section.subsections %}
-      {% set service = get_section(path=path) %}
-      <section class="format">
-        <h3>{{ service.title }}</h3>
-        <p class="format-meta">{{ service.extra.duration }} · <strong>{{ service.extra.price }}</strong></p>
-        {{ service.content | safe }}
-      </section>
-      {% endfor %}
-    </div>
-    {% if section.extra.image %}
-    <img class="page-photo" src="/images/{{ section.extra.image }}" alt="{{ section.extra.image_alt }}">
-    {% endif %}
+<article class="band narrow page-body">
+  <img class="page-photo" src="/images/{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
+  <div class="page-text">
+    {{ page.content | safe }}
+    {% for service in page.extra.services %}
+    <hr>
+    <h3>{{ service.name }}</h3>
+    <p class="price">{{ service.duration }} · <strong>{{ service.price }}</strong></p>
+    {{ service.description | markdown | safe }}
+    {% endfor %}
   </div>
 </article>
 {% endblock %}
