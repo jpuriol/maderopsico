@@ -3,13 +3,16 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<header class="band narrow sand page-header">
-  <p class="label">{{ page.extra.subtitle }}</p>
-  <h1>{{ page.title }}</h1>
+<header class="band narrow sand page-header photo-header">
+  <div>
+    <p class="label">{{ page.extra.subtitle }}</p>
+    <h1 class="section-title">{{ page.title }}</h1>
+    <blockquote>{{ page.extra.quote }}</blockquote>
+  </div>
+  <img src="/images/{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
 </header>
 
-<article class="band narrow page-body">
-  <img class="page-photo" src="/images/{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
+<article class="band narrow">
   <div class="page-text">
     {{ page.content | safe }}
   </div>

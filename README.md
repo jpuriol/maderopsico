@@ -19,7 +19,7 @@ values (colours, sizes, spacing), one with the rules.
 | --- | --- |
 | `config.toml` | Site title, description, contact details |
 | `content/_index.md` | Home: hero, quote, specialties, testimonials (front matter) + "Conóceme" (body) |
-| `content/acerca-de.md` | "Sobre mí" |
+| `content/acerca-de.md` | "Sobre mí": subtitle, quote and photo for the header (front matter) + text (body) |
 | `content/servicios.md` | "Servicios": the services (front matter) + intro text (body) |
 | `templates/base.html` | `<head>`, header, `{% block content %}`, footer |
 | `templates/index.html` | The home page |

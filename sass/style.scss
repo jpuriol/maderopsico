@@ -396,6 +396,38 @@ img {
   }
 }
 
+// A header with a square photo beside the text ("Sobre mí"). On phones the
+// photo goes below the text.
+.photo-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: $space-xxl;
+  align-items: center;
+
+  blockquote {
+    margin: $space-l 0 0;
+    color: $brown;
+    font-size: $font-h3;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.45;
+  }
+
+  // Cropped to a square, whatever the shape of the original photo.
+  img {
+    width: 16rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin: 0 $space-m $space-m 0; // room for the rose block
+    box-shadow: $space-m $space-m 0 $rose; // the same rose block as .page-photo
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: $space-xl;
+  }
+}
+
 .page-body {
   display: flow-root; // keeps the floated photo inside when the text is shorter than it
 

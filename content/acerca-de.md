@@ -6,9 +6,8 @@ template = "acerca-de.html"
 subtitle = "Psicóloga Sanitaria (M-36115)"
 image = "lourdes-retrato.jpg"
 image_alt = "Retrato de Lourdes Madero"
+quote = "Nacemos para amar y ser amados"
 +++
-
-## Nacemos para amar y ser amados
 
 Si tuviera que elegir tres adjetivos para definirme creo que serían: cercana,
 paciente y curiosa.
