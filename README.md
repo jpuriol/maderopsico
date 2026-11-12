@@ -20,7 +20,7 @@ values (colours, sizes, spacing), one with the rules.
 | `config.toml` | Site title, description, contact details |
 | `content/_index.md` | Home: hero, quote, specialties, testimonials (front matter) + "Conóceme" (body) |
 | `content/acerca-de.md` | "Sobre mí": subtitle, quote and photo for the header (front matter) + text (body) |
-| `content/servicios.md` | "Servicios": the services (front matter) + intro text (body) |
+| `content/servicios.md` | "Servicios": subtitle, quote and photo for the header, the services (front matter) + intro text (body) |
 | `templates/base.html` | `<head>`, header, `{% block content %}`, footer |
 | `templates/index.html` | The home page |
 | `templates/acerca-de.html` | The "Sobre mí" page |
@@ -37,12 +37,15 @@ values (colours, sizes, spacing), one with the rules.
 - **Add a testimonial**: copy an `[[extra.testimonials]]` block in
   `content/_index.md` and change `author` and `text`.
 - **Change a photo**: put the file in `static/images/` and set `image` and
-  `image_alt` in that page's front matter.
+  `image_alt` in that page's front matter. On "Sobre mí" and "Servicios" the
+  photo is shown cropped to a square around its centre.
 - **Change contact details**: edit `[extra]` in `config.toml`.
 - **Change a colour or spacing**: edit `sass/_variables.scss`.
 
 ## Add a page
 
-Create `content/x.md` with a `title` and `template = "x.html"`, write that
-template (copy `templates/acerca-de.html`), and add a menu link in
-`templates/base.html`. The page is published at `/x/`.
+Create `content/x.md` with a `title`, `template = "x.html"` and, under
+`[extra]`, the `subtitle`, `quote`, `image` and `image_alt` the template reads,
+so the build does not fail; write that template (copy
+`templates/acerca-de.html`), and add a menu link in `templates/base.html`. The
+page is published at `/x/`.

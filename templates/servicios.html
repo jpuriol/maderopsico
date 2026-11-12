@@ -4,20 +4,21 @@
 
 {% block content %}
 <header class="band narrow sand page-header">
-  <p class="label">{{ page.extra.subtitle }}</p>
-  <h1>{{ page.title }}</h1>
+  <div>
+    <p class="label">{{ page.extra.subtitle }}</p>
+    <h1 class="section-title">{{ page.title }}</h1>
+    <blockquote>{{ page.extra.quote }}</blockquote>
+  </div>
+  <img src="/images/{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
 </header>
 
-<article class="band narrow page-body">
-  <img class="page-photo" src="/images/{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
-  <div class="page-text">
-    {{ page.content | safe }}
-    {% for service in page.extra.services %}
-    <hr>
-    <h3>{{ service.name }}</h3>
-    <p class="price">{{ service.duration }} · <strong>{{ service.price }}</strong></p>
-    {{ service.description | markdown | safe }}
-    {% endfor %}
-  </div>
+<article class="band narrow page-text">
+  {{ page.content | safe }}
+  {% for service in page.extra.services %}
+  <hr>
+  <h3>{{ service.name }}</h3>
+  <p class="price">{{ service.duration }} · <strong>{{ service.price }}</strong></p>
+  {{ service.description | markdown | safe }}
+  {% endfor %}
 </article>
 {% endblock %}

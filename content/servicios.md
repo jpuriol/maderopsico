@@ -7,6 +7,7 @@ aliases = ["/programas/"]
 subtitle = "Te acompaño desde diferentes formatos"
 image = "botella-vasos.jpg"
 image_alt = "Sirviendo agua de una botella en dos vasos, en la consulta"
+quote = "Considero esencial reconocer qué necesidades tiene la persona que tengo delante."
 
 # The services appear as cards on the home page and, with their description, at the end of this page.
 [[extra.services]]
@@ -68,8 +69,7 @@ toda la familia o solo una parte.
 
 ## El primer contacto
 
-Una parte clave de mi trabajo es la evaluación. Considero esencial reconocer qué
-necesidades tiene la persona que tengo delante.
+Una parte clave de mi trabajo es la evaluación.
 
 Mi forma de trabajar es en el primer contacto hacer una evalucación teléfonica de unos
 15 minutos. Una vez realizada la evaluación, programamos una guía de viaje.

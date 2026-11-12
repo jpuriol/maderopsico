@@ -384,7 +384,13 @@ img {
 }
 
 // ---------- "Sobre mí" and "Servicios" ----------
+// The text on the left and a square photo on the right. On phones the photo
+// goes below the text.
 .page-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: $space-xxl;
+  align-items: center;
   padding-block: $space-xxl;
 
   .label {
@@ -394,15 +400,6 @@ img {
   h1 {
     margin: 0;
   }
-}
-
-// A header with a square photo beside the text ("Sobre mí"). On phones the
-// photo goes below the text.
-.photo-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: $space-xxl;
-  align-items: center;
 
   blockquote {
     margin: $space-l 0 0;
@@ -419,35 +416,13 @@ img {
     aspect-ratio: 1;
     object-fit: cover;
     margin: 0 $space-m $space-m 0; // room for the rose block
-    box-shadow: $space-m $space-m 0 $rose; // the same rose block as .page-photo
+    box-shadow: $space-m $space-m 0 $rose; // a rose block peeking out from behind the photo
   }
 
   @media (max-width: $mobile) {
     grid-template-columns: 1fr;
     gap: $space-xl;
   }
-}
-
-.page-body {
-  display: flow-root; // keeps the floated photo inside when the text is shorter than it
-
-  // Line between services. As a block of its own it stops at the photo
-  // instead of running underneath it.
-  hr {
-    display: flow-root;
-    margin: $space-m 0;
-    border: 0;
-    border-top: 1px solid $rose;
-  }
-}
-
-// The photo floats on the left: the text runs beside it and, once the photo
-// ends, across the full width.
-.page-photo {
-  float: left;
-  width: 38%;
-  margin: 0 ($space-xl + $space-m) ($space-l + $space-m) 0;
-  box-shadow: $space-m $space-m 0 $rose; // a rose block peeking out from behind the photo
 }
 
 .page-text {
@@ -458,24 +433,17 @@ img {
   ul {
     padding-left: $space-m;
   }
+
+  // Line between services.
+  hr {
+    margin: $space-m 0;
+    border: 0;
+    border-top: 1px solid $rose;
+  }
 }
 
 .price {
   color: $brown;
-}
-
-// On phones the photo closes the page, below the text, as it does today.
-@media (max-width: $mobile) {
-  .page-body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .page-photo {
-    order: 1;
-    width: auto;
-    margin: $space-m $space-m $space-m 0;
-  }
 }
 
 // ---------- Footer ----------

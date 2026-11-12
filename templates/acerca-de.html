@@ -3,7 +3,7 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<header class="band narrow sand page-header photo-header">
+<header class="band narrow sand page-header">
   <div>
     <p class="label">{{ page.extra.subtitle }}</p>
     <h1 class="section-title">{{ page.title }}</h1>
@@ -12,9 +12,7 @@
   <img src="/images/{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
 </header>
 
-<article class="band narrow">
-  <div class="page-text">
-    {{ page.content | safe }}
-  </div>
+<article class="band narrow page-text">
+  {{ page.content | safe }}
 </article>
 {% endblock %}
