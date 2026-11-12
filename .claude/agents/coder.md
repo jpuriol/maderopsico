@@ -93,7 +93,7 @@ Styles:
 - Shared classes are reused before a new one is added: `.band`, `.narrow`,
   `.sand`, `.center`, `.columns`, `.section-title`, `.label`, `.button`,
   `.more`. Class names are short English words joined by hyphens
-  (`.page-photo`).
+  (`.page-header`).
 - One breakpoint, `@media (max-width: $mobile)`, normally written inside the
   rule it changes.
 - Sass stays close to plain CSS. Fine: variables, nesting up to 2 levels,

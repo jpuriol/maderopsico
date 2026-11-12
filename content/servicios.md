@@ -71,7 +71,7 @@ toda la familia o solo una parte.
 
 Una parte clave de mi trabajo es la evaluación.
 
-Mi forma de trabajar es en el primer contacto hacer una evalucación teléfonica de unos
+Mi forma de trabajar es en el primer contacto hacer una evaluación telefónica de unos
 15 minutos. Una vez realizada la evaluación, programamos una guía de viaje.
 
 ## Formatos y tarifas
