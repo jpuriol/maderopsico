@@ -9,7 +9,8 @@ image = "botella-vasos.jpg"
 image_alt = "Sirviendo agua de una botella en dos vasos, en la consulta"
 quote = "Considero esencial reconocer qué necesidades tiene la persona que tengo delante"
 
-# The services appear as cards on the home page and, with their description, at the end of this page.
+# The services appear as cards on the home page and, on this page, in the
+# "Formatos y tarifas" table and below it with their description.
 [[extra.services]]
 name = "Terapia de pareja"
 duration = "1 h"
@@ -33,19 +34,19 @@ duration = "55 min"
 price = "60 €"
 image = "terapia-individual.jpg"
 description = """
-En el proceso terapéutico individual te acompaño:
+En el proceso terapéutico individual te acompaño a mejorar tu bienestar y tu
+salud emocional para que puedas crecer como persona.
 
-- Si quieres mejorar tu bienestar y tu salud emocional para crecer como persona.
-- Si tienes síntomas negativos, como bajo estado de ánimo, incapacidad para
-  disfrutar de las cosas o alteraciones del apetito, de los hábitos alimentarios
-  o del sueño.
-- Si quieres revisar algunos aspectos de tu vida que te impiden salir de hábitos
-  negativos que te generan malestar, ya sea a través de vínculos, objetos o
-  sustancias.
-- Si has vivido un acontecimiento traumático que no puedes integrar en tu
-  historia y que te sigue doliendo.
-- Si crees que no haces un buen uso de las habilidades sociales que te permiten
-  generar relaciones sanas en las que poder crecer.
+Puede ayudarte si has vivido un acontecimiento traumático que no puedes integrar
+en tu historia y que te sigue doliendo, o si tienes síntomas negativos, como
+bajo estado de ánimo, incapacidad para disfrutar de las cosas o alteraciones del
+apetito, de los hábitos alimentarios o del sueño.
+
+También puede ser útil si crees que no haces un buen uso de las habilidades
+sociales que te permiten generar relaciones sanas en las que poder crecer, o si
+quieres revisar algunos aspectos de tu vida que te impiden salir de hábitos
+negativos que te generan malestar, ya sea a través de vínculos, objetos o
+sustancias.
 """
 
 [[extra.services]]
@@ -67,10 +68,8 @@ toda la familia o solo una parte.
 """
 +++
 
-## El primer contacto
+**Empezamos con una llamada gratuita de unos 15 minutos en la que me cuentas qué 
+te trae a consulta y vemos juntos si encajamos**. 
 
-Una parte clave de mi trabajo es la evaluación. Por eso, en el primer contacto
-hacemos una evaluación telefónica de unos 15 minutos. Una vez realizada,
-programamos una guía de viaje.
-
-## Formatos y tarifas
+Si es así, programamos una guía de viaje para recorrer el camino y alcanzar tus 
+objetivos, en el formato que mejor se adapte a lo que necesitas.

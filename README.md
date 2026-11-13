@@ -20,11 +20,11 @@ values (colours, sizes, spacing), one with the rules.
 | `config.toml` | Site title, description, contact details |
 | `content/_index.md` | Home: hero, quote, specialties, testimonials (front matter) + "Conóceme" (body) |
 | `content/acerca-de.md` | "Sobre mí": subtitle, quote and photo for the header (front matter) + text (body) |
-| `content/servicios.md` | "Servicios": subtitle, quote and photo for the header, the services (front matter) + intro text (body) |
+| `content/servicios.md` | "Servicios": subtitle, quote and photo for the header, the services (front matter) + "El primer contacto" (body) |
 | `templates/base.html` | `<head>`, header, `{% block content %}`, footer |
 | `templates/index.html` | The home page |
 | `templates/acerca-de.html` | The "Sobre mí" page |
-| `templates/servicios.html` | The "Servicios" page |
+| `templates/servicios.html` | The "Servicios" page, including the "Formatos y tarifas" table |
 | `sass/_variables.scss` | Colours, font sizes, spacing, widths |
 | `sass/style.scss` | Every rule, in page order |
 | `static/` | Photos, icons and the Raleway font (`OFL.txt` is its licence) |
@@ -33,7 +33,7 @@ values (colours, sizes, spacing), one with the rules.
 
 - **Change text**: edit the page's file in `content/`.
 - **Change a price**: edit `price` in `content/servicios.md`; the home page
-  cards read the same list.
+  cards and the "Formatos y tarifas" table on "Servicios" read the same list.
 - **Add a testimonial**: copy an `[[extra.testimonials]]` block in
   `content/_index.md` and change `author` and `text`.
 - **Change a photo**: put the file in `static/images/` and set `image` and

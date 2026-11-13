@@ -434,7 +434,7 @@ img {
     padding-left: $space-m;
   }
 
-  // Line between services.
+  // Line under each service.
   hr {
     margin: $space-m 0;
     border: 0;
@@ -442,8 +442,24 @@ img {
   }
 }
 
-.price {
+// Formats and prices on "Servicios": rose lines like the ones between
+// services, and the prices lined up on the right.
+.prices {
+  width: 100%;
+  margin-bottom: $space-xxl;
+  border-collapse: collapse;
   color: $brown;
+
+  th, td {
+    padding: $space-s $space-m $space-s 0;
+    border-bottom: 1px solid $rose;
+    text-align: left;
+  }
+
+  th:last-child, td:last-child {
+    padding-right: 0;
+    text-align: right;
+  }
 }
 
 // ---------- Footer ----------

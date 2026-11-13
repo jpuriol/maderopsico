@@ -14,11 +14,31 @@
 
 <article class="band narrow page-text">
   {{ page.content | safe }}
+
+  <h2>Formatos y tarifas</h2>
+  <table class="prices">
+    <thead>
+      <tr>
+        <th><span class="label">Formato</span></th>
+        <th><span class="label">Duración</span></th>
+        <th><span class="label">Precio</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in page.extra.services %}
+      <tr>
+        <td>{{ service.name }}</td>
+        <td>{{ service.duration }}</td>
+        <td><strong>{{ service.price }}</strong></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
   {% for service in page.extra.services %}
-  <hr>
   <h3>{{ service.name }}</h3>
-  <p class="price">{{ service.duration }} · <strong>{{ service.price }}</strong></p>
   {{ service.description | markdown | safe }}
+  <hr>
   {% endfor %}
 </article>
 {% endblock %}
