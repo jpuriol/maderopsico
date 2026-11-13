@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="band site-header">
+<header class="band site-header" id="menu">
   <a class="brand" href="/">
     Lourdes Madero
     <span class="label">Psicóloga sanitaria</span>
@@ -53,5 +53,10 @@
 
   <p class="copyright">© {{ now() | date(format="%Y") }} {{ config.title }}</p>
 </footer>
+
+{# Phones only: there the header is not sticky. Hidden on wide screens by .to-top in style.scss. #}
+<a class="to-top" href="#menu" aria-label="Volver al menú">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 15 12 9 18 15"/></svg>
+</a>
 </body>
 </html>

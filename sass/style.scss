@@ -524,3 +524,41 @@ img {
   color: rgba($white, 0.75);
   font-size: $font-small;
 }
+
+// ---------- "Back to menu" button ----------
+// On phones the header scrolls away (see .site-header), so this round
+// button stays in the bottom-right corner and jumps back to it.
+.to-top {
+  display: none;
+  position: fixed;
+  right: $space-m;
+  bottom: $space-m;
+  z-index: 10;
+  place-items: center;
+  width: 3rem;  // 48px: a comfortable tap target
+  height: 3rem;
+  border-radius: 50%;
+  background: $clay;
+  color: $white;
+  opacity: 0.7; // discreet, but the chevron keeps 3:1 contrast over the page
+  box-shadow: 0 2px $space-s rgba($brown, 0.3);
+  transition: background-color 0.2s;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: currentColor; // the button's $white
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &:hover {
+    background: $clay-dark;
+  }
+
+  @media (max-width: $mobile) {
+    display: grid;
+  }
+}

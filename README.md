@@ -17,7 +17,7 @@ Each page is one Markdown file in `content/`. The text below the closing `+++` i
 | `content/_index.md` | Home, all in the front matter in page order: hero, "Conóceme", specialties, quote, testimonials (the services come from `content/servicios.md`) |
 | `content/acerca-de.md` | "Sobre mí": subtitle, quote and photo for the header (front matter) + text (body) |
 | `content/servicios.md` | "Servicios": subtitle, quote and photo for the header, the services (front matter) + "El primer contacto" (body) |
-| `templates/base.html` | `<head>`, header, `{% block content %}`, footer |
+| `templates/base.html` | `<head>`, header, `{% block content %}`, footer, the phone-only "back to menu" button |
 | `templates/index.html` | The home page |
 | `templates/acerca-de.html` | The "Sobre mí" page |
 | `templates/servicios.html` | The "Servicios" page, including the "Formatos y tarifas" table |
