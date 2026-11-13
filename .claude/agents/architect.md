@@ -81,7 +81,7 @@ For each concrete task:
    - The required behavior and how it should look on the page, on a wide screen and below `$mobile` (760px).
    - Relevant files, templates, blocks, classes, Sass variables, and front matter keys.
    - The existing page or section closest to the request, as the pattern to follow.
-   - Risks and edge cases: a front matter key that a template reads but a page does not set (the build fails); data shown on two pages (the services list feeds `/` and `/servicios/`); links to an `id` or an old URL (`/#opiniones`, `/#contacto`, the `/programas/` alias); the floated photo on the inner pages; the sticky header; text much longer or shorter than today's.
+   - Risks and edge cases: a front matter key that a template reads but a page does not set (the build fails); data shown on two pages (the services list feeds `/` and `/servicios/`); links to an `id` or an old URL (`/#contacto`, the `/programas/` alias); the floated photo on the inner pages; the sticky header; text much longer or shorter than today's.
    - Whether `README.md` needs a change.
    - Exact verification commands and pages to check by hand.
 6. Produce a prompt that the coder can execute.
