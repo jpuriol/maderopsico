@@ -42,6 +42,3 @@ mismos recursos no le valen a todo el mundo y que cada una de las personas que
 se sientan enfrente tiene una historia muy concreta a la que adaptarse. Por eso,
 una parte clave de mi trabajo es la evaluación. Considero esencial reconocer qué
 necesidades tiene la persona que tengo delante.
-
-Una vez realizada la evaluación, programamos una guía de viaje para recorrer el
-camino y alcanzar los objetivos.

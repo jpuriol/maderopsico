@@ -34,19 +34,16 @@ duration = "55 min"
 price = "60 €"
 image = "terapia-individual.jpg"
 description = """
-En el proceso terapéutico individual te acompaño a mejorar tu bienestar y tu
-salud emocional para que puedas crecer como persona.
+A veces el malestar no tiene un nombre claro: algo que pasó y sigue doliendo, una 
+tristeza que no se va, cambios en el sueño o el apetito, hábitos que te hacen daño 
+aunque quieras dejarlos, o la sensación de repetir siempre los mismos patrones en 
+tus relaciones. La terapia individual es un espacio para detenerte, escucharte y 
+entender qué te está pasando y de dónde viene.
 
-Puede ayudarte si has vivido un acontecimiento traumático que no puedes integrar
-en tu historia y que te sigue doliendo, o si tienes síntomas negativos, como
-bajo estado de ánimo, incapacidad para disfrutar de las cosas o alteraciones del
-apetito, de los hábitos alimentarios o del sueño.
-
-También puede ser útil si crees que no haces un buen uso de las habilidades
-sociales que te permiten generar relaciones sanas en las que poder crecer, o si
-quieres revisar algunos aspectos de tu vida que te impiden salir de hábitos
-negativos que te generan malestar, ya sea a través de vínculos, objetos o
-sustancias.
+Juntos exploramos tu historia, tus vínculos y tu forma de afrontar lo que te ocurre, 
+para que puedas integrar lo vivido y relacionarte contigo y con los demás de una manera 
+más sana. No se trata solo de que desaparezcan los síntomas, sino de que puedas crecer 
+como persona y elegir con más libertad cómo quieres vivir.
 """
 
 [[extra.services]]
