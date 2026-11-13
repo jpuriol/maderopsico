@@ -44,6 +44,4 @@ Puede ser útil en momentos de crisis o de cambio, como un nacimiento, una separ
 """
 +++
 
-**Empezamos con una llamada gratuita de unos 15 minutos en la que me cuentas qué te trae a consulta y vemos juntos si encajamos**.
-
-Si es así, programamos una guía de viaje para recorrer el camino y alcanzar tus objetivos, en el formato que mejor se adapte a lo que necesitas.
+**Empezamos con una llamada gratuita de 15 minutos en la que me cuentas tu motivo de consulta**, y vemos si encajamos. Si es así, establecemos objetivos en el formato que mejor se adapte a lo que necesitas.
