@@ -7,7 +7,7 @@ aliases = ["/programas/"]
 subtitle = "Te acompaño desde diferentes formatos"
 image = "botella-vasos.jpg"
 image_alt = "Sirviendo agua de una botella en dos vasos, en la consulta"
-quote = "Considero esencial reconocer qué necesidades tiene la persona que tengo delante."
+quote = "Considero esencial reconocer qué necesidades tiene la persona que tengo delante"
 
 # The services appear as cards on the home page and, with their description, at the end of this page.
 [[extra.services]]
@@ -35,16 +35,16 @@ image = "terapia-individual.jpg"
 description = """
 En el proceso terapéutico individual te acompaño:
 
-- A mejorar tu bienestar y salud emocional para un mayor crecimiento.
-- Si tienes síntomas negativos (bajo estado de ánimo, incapacidad para disfrutar
-  de las cosas), alteración del apetito y hábitos alimenticios, alteración del
-  sueño...
+- Si quieres mejorar tu bienestar y tu salud emocional para crecer como persona.
+- Si tienes síntomas negativos, como bajo estado de ánimo, incapacidad para
+  disfrutar de las cosas o alteraciones del apetito, de los hábitos alimentarios
+  o del sueño.
 - Si quieres revisar algunos aspectos de tu vida que te impiden salir de hábitos
-  negativos, que te generan malestar, ya sea a través de vínculos, objetos o
+  negativos que te generan malestar, ya sea a través de vínculos, objetos o
   sustancias.
 - Si has vivido un acontecimiento traumático que no puedes integrar en tu
-  historia y te sigue doliendo.
-- Si crees que no tienes un buen uso de habilidades sociales que te permitan
+  historia y que te sigue doliendo.
+- Si crees que no haces un buen uso de las habilidades sociales que te permiten
   generar relaciones sanas en las que poder crecer.
 """
 
@@ -69,9 +69,8 @@ toda la familia o solo una parte.
 
 ## El primer contacto
 
-Una parte clave de mi trabajo es la evaluación.
-
-Mi forma de trabajar es en el primer contacto hacer una evaluación telefónica de unos
-15 minutos. Una vez realizada la evaluación, programamos una guía de viaje.
+Una parte clave de mi trabajo es la evaluación. Por eso, en el primer contacto
+hacemos una evaluación telefónica de unos 15 minutos. Una vez realizada,
+programamos una guía de viaje.
 
 ## Formatos y tarifas
