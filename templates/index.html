@@ -14,7 +14,7 @@
 <section class="band intro">
   <h2 class="section-title">Conóceme</h2>
   <div class="intro-text">
-    {{ section.content | safe }}
+    {{ section.extra.intro | markdown | safe }}
     <a class="more" href="/acerca-de/">Leer más sobre mí</a>
   </div>
 </section>

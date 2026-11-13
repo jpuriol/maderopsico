@@ -11,14 +11,16 @@ zola build   # writes the final site to public/
 
 Each page is one Markdown file in `content/`. The text below the closing `+++`
 is the page's main text; everything else the page shows (photo, subtitle, and
-lists such as services or testimonials) is in the front matter above it. Each
-page has its own template, and two Sass files hold all the styles: one with the
-values (colours, sizes, spacing), one with the rules.
+lists such as services or testimonials) is in the front matter above it. The
+home page is the exception: all its text, "Conóceme" included, is in the front
+matter, in the order the page shows it. Each page has its own template, and two
+Sass files hold all the styles: one with the values (colours, sizes, spacing),
+one with the rules.
 
 | File | What it contains |
 | --- | --- |
 | `config.toml` | Site title, description, contact details |
-| `content/_index.md` | Home: hero, quote, specialties, testimonials (front matter) + "Conóceme" (body) |
+| `content/_index.md` | Home, all in the front matter in page order: hero, "Conóceme", specialties, quote, testimonials (the services come from `content/servicios.md`) |
 | `content/acerca-de.md` | "Sobre mí": subtitle, quote and photo for the header (front matter) + text (body) |
 | `content/servicios.md` | "Servicios": subtitle, quote and photo for the header, the services (front matter) + "El primer contacto" (body) |
 | `templates/base.html` | `<head>`, header, `{% block content %}`, footer |

@@ -2,15 +2,26 @@
 title = "Psicóloga en Madrid y online"
 
 [extra]
+# Hero
 heading = "Psicología en el centro de Madrid y sesiones online"
 subtitle = "Descubre, comprende, haz camino"
 image = "lourdes-sofa.jpg"
 image_alt = "Lourdes Madero sentada en un sofá"
 
-quote = """
-Para curarse hay que dejarse amar
-Para amar hay que dejarse ser"""
+# "Conóceme"
+intro = """
+Psicóloga sanitaria (M-36115) especializada en terapia familiar sistémica.
 
+Decidí estudiar psicología por el anhelo de entender al ser humano. Me formé en
+terapia sistémica al identificar que somos seres en relación y que las
+relaciones que se dan antes y durante nuestra vida inciden en el desarrollo de
+nuestra identidad.
+
+Me dedico a acompañar a personas en el contacto con sus vínculos para que,
+identificándolos, puedan elegir cómo continuarlos y así amar libremente.
+"""
+
+# "En qué me especializo"
 specialties = [
   { name = "Poner luz", icon = "vela.png" },
   { name = "Reconocer", icon = "lupa.png" },
@@ -19,6 +30,14 @@ specialties = [
   { name = "Mirada global", icon = "planeta.png" },
 ]
 
+# "Servicios": the cards read the services from content/servicios.md.
+
+# Quote between "Servicios" and "Opiniones"
+quote = """
+Para curarse hay que dejarse amar
+Para amar hay que dejarse ser"""
+
+# "Opiniones"
 [[extra.testimonials]]
 author = "Patricia Martínez"
 text = """
@@ -44,13 +63,3 @@ Es una persona con mucha capacidad para ayudarte a superar tus problemas. Es
 directa y a la vez empática. La vocación que siente por su trabajo es palpable y
 redunda en la atención que otorga al paciente."""
 +++
-
-Psicóloga sanitaria (M-36115) especializada en terapia familiar sistémica.
-
-Decidí estudiar psicología por el anhelo de entender al ser humano. Me formé en
-terapia sistémica al identificar que somos seres en relación y que las
-relaciones que se dan antes y durante nuestra vida inciden en el desarrollo de
-nuestra identidad.
-
-Me dedico a acompañar a personas en el contacto con sus vínculos para que,
-identificándolos, puedan elegir cómo continuarlos y así amar libremente.

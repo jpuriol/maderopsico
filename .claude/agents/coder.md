@@ -68,10 +68,11 @@ Simplicity:
 
 Content and templates:
 
-- Everything a page shows besides its main text is in its front matter under
-  `[extra]`: single values (`subtitle`, `image`, `image_alt`), lists as
-  `[[extra.name]]` tables, long text in `"""`. Site-wide values such as the
-  contact details are in `[extra]` in `config.toml`.
+- Everything a page shows besides its main text (on the home page, the main text
+  too, in page order) is in its front matter under `[extra]`: single values
+  (`subtitle`, `image`, `image_alt`), lists as `[[extra.name]]` tables, long
+  text in `"""`. Site-wide values such as the contact details are in `[extra]`
+  in `config.toml`.
 - Each piece of data lives in one file. Another page that needs it reads it
   with `get_page`, as the home page does with the services in
   `content/servicios.md`.
