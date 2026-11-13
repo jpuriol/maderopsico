@@ -9,13 +9,7 @@ zola build   # writes the final site to public/
 
 ## How it works
 
-Each page is one Markdown file in `content/`. The text below the closing `+++`
-is the page's main text; everything else the page shows (photo, subtitle, and
-lists such as services or testimonials) is in the front matter above it. The
-home page is the exception: all its text, "Conóceme" included, is in the front
-matter, in the order the page shows it. Each page has its own template, and two
-Sass files hold all the styles: one with the values (colours, sizes, spacing),
-one with the rules.
+Each page is one Markdown file in `content/`. The text below the closing `+++` is the page's main text; everything else the page shows (photo, subtitle, and lists such as services or testimonials) is in the front matter above it. The home page is the exception: all its text, "Conóceme" included, is in the front matter, in the order the page shows it. Each page has its own template, and two Sass files hold all the styles: one with the values (colours, sizes, spacing), one with the rules.
 
 | File | What it contains |
 | --- | --- |
@@ -34,20 +28,12 @@ one with the rules.
 ## Common edits
 
 - **Change text**: edit the page's file in `content/`.
-- **Change a price**: edit `price` in `content/servicios.md`; the home page
-  cards and the "Formatos y tarifas" table on "Servicios" read the same list.
-- **Add a testimonial**: copy an `[[extra.testimonials]]` block in
-  `content/_index.md` and change `author` and `text`.
-- **Change a photo**: put the file in `static/images/` and set `image` and
-  `image_alt` in that page's front matter. On "Sobre mí" and "Servicios" the
-  photo is shown cropped to a square around its centre.
+- **Change a price**: edit `price` in `content/servicios.md`; the home page cards and the "Formatos y tarifas" table on "Servicios" read the same list.
+- **Add a testimonial**: copy an `[[extra.testimonials]]` block in `content/_index.md` and change `author` and `text`.
+- **Change a photo**: put the file in `static/images/` and set `image` and `image_alt` in that page's front matter. On "Sobre mí" and "Servicios" the photo is shown cropped to a square around its centre.
 - **Change contact details**: edit `[extra]` in `config.toml`.
 - **Change a colour or spacing**: edit `sass/_variables.scss`.
 
 ## Add a page
 
-Create `content/x.md` with a `title`, `template = "x.html"` and, under
-`[extra]`, the `subtitle`, `quote`, `image` and `image_alt` the template reads,
-so the build does not fail; write that template (copy
-`templates/acerca-de.html`), and add a menu link in `templates/base.html`. The
-page is published at `/x/`.
+Create `content/x.md` with a `title`, `template = "x.html"` and, under `[extra]`, the `subtitle`, `quote`, `image` and `image_alt` the template reads, so the build does not fail; write that template (copy `templates/acerca-de.html`), and add a menu link in `templates/base.html`. The page is published at `/x/`.
