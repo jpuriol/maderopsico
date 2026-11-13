@@ -1,7 +1,6 @@
 +++
 title = "Servicios"
 template = "servicios.html"
-aliases = ["/programas/"]
 
 [extra]
 subtitle = "Te acompaño desde diferentes formatos"
