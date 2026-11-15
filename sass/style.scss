@@ -174,6 +174,25 @@ img {
   }
 }
 
+// ---------- Skip link ----------
+// First link on every page, for keyboard users: it jumps over the menu.
+// Kept above the top edge of the screen until Tab reaches it.
+.skip {
+  position: absolute;
+  top: $space-s;
+  left: $space-s;
+  z-index: 20; // above the sticky header
+  padding: $space-s $space-m;
+  background: $white;
+  font-size: $font-small;
+  font-weight: 600;
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
 // ---------- Header ----------
 .site-header {
   position: sticky;
@@ -556,6 +575,14 @@ img {
 
   &:hover {
     background: $clay-dark;
+  }
+
+  // The usual brown ring vanishes over the brown footer, where this button
+  // sits when Tab reaches it, so this ring is drawn inside the button.
+  &:focus-visible {
+    outline-color: $white;
+    outline-offset: -6px;
+    opacity: 1;
   }
 
   @media (max-width: $mobile) {

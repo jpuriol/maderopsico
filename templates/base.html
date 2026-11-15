@@ -12,20 +12,24 @@
 </head>
 <body>
 
+{# First link on every page, so keyboard users can jump over the menu (see .skip in style.scss). #}
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
 <header class="band site-header" id="menu">
   <a class="brand" href="/">
     Lourdes Madero
     <span class="label">Psicóloga sanitaria</span>
   </a>
+  {# current_path is not set on the 404 page. #}
   <nav aria-label="Menú principal">
-    <a href="/acerca-de/" {% if current_path == "/acerca-de/" %}aria-current="page"{% endif %}>Sobre mí</a>
-    <a href="/servicios/" {% if current_path == "/servicios/" %}aria-current="page"{% endif %}>Servicios</a>
+    <a href="/acerca-de/" {% if current_path is defined and current_path == "/acerca-de/" %}aria-current="page"{% endif %}>Sobre mí</a>
+    <a href="/servicios/" {% if current_path is defined and current_path == "/servicios/" %}aria-current="page"{% endif %}>Servicios</a>
     <a href="#contacto">Contacto</a>
   </nav>
   <a class="button" href="https://wa.me/{{ config.extra.whatsapp }}">WhatsApp</a>
 </header>
 
-<main>
+<main id="contenido">
   {% block content %}{% endblock %}
 </main>
 

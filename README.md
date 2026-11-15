@@ -17,10 +17,11 @@ Each page is one Markdown file in `content/`. The text below the closing `+++` i
 | `content/_index.md` | Home, all in the front matter in page order: hero, "Conóceme", specialties, quote, testimonials (the services come from `content/servicios.md`) |
 | `content/acerca-de.md` | "Sobre mí": subtitle, quote and photo for the header (front matter) + text (body) |
 | `content/servicios.md` | "Servicios": subtitle, quote and photo for the header, the services (front matter) + "El primer contacto" (body) |
-| `templates/base.html` | `<head>`, header, `{% block content %}`, footer, the phone-only "back to menu" button |
+| `templates/base.html` | `<head>`, the skip link, header, `{% block content %}`, footer, the phone-only "back to menu" button |
 | `templates/index.html` | The home page |
 | `templates/acerca-de.html` | The "Sobre mí" page |
 | `templates/servicios.html` | The "Servicios" page, including the "Formatos y tarifas" table |
+| `templates/404.html` | The page shown for a wrong address (its text is in the template) |
 | `sass/_variables.scss` | Colours, font sizes, spacing, widths |
 | `sass/style.scss` | Every rule, in page order |
 | `static/` | Photos, icons and the Raleway font (`OFL.txt` is its licence) |
