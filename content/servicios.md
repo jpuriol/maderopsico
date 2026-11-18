@@ -11,17 +11,6 @@ quote = "Considero esencial reconocer qué necesidades tiene la persona que teng
 # The services appear as cards on the home page and, on this page, in the
 # "Formatos y tarifas" table and below it with their description.
 [[extra.services]]
-name = "Terapia familiar"
-duration = "1 h"
-price = "70 €"
-image = "terapia-familiar.jpg"
-description = """
-La terapia familiar sistémica es mi especialidad. Desde esta mirada, la familia es un sistema: lo que le ocurre a uno de sus miembros afecta a los demás, y la forma en que nos relacionamos influye en el malestar de cada uno. Por eso, en lugar de centrarnos en una sola persona, trabajamos con las relaciones.
-
-Puede ser útil en momentos de crisis o de cambio, como un nacimiento, una separación, un duelo o la adolescencia de un hijo; cuando la comunicación se ha vuelto difícil, o cuando el malestar de uno de los miembros está afectando a toda la familia. Según lo que necesitemos trabajar, a las sesiones puede acudir toda la familia o solo una parte.
-"""
-
-[[extra.services]]
 name = "Terapia individual"
 duration = "55 min"
 price = "60 €"
@@ -30,6 +19,17 @@ description = """
 A veces el malestar no tiene un nombre claro: algo que pasó y sigue doliendo, una tristeza que no se va, cambios en el sueño o el apetito, hábitos que te hacen daño aunque quieras dejarlos, o la sensación de repetir siempre los mismos patrones en tus relaciones. La terapia individual es un espacio para detenerte, escucharte y entender qué te está pasando y de dónde viene.
 
 Juntos exploramos tu historia, tus vínculos y tu forma de afrontar lo que te ocurre, para que puedas integrar lo vivido y relacionarte contigo y con los demás de una manera más sana. No se trata solo de que desaparezcan los síntomas, sino de que puedas crecer como persona y elegir con más libertad cómo quieres vivir.
+"""
+
+[[extra.services]]
+name = "Terapia familiar"
+duration = "1 h"
+price = "70 €"
+image = "terapia-familiar.jpg"
+description = """
+La terapia familiar sistémica es mi especialidad. Desde esta mirada, la familia es un sistema: lo que le ocurre a uno de sus miembros afecta a los demás, y la forma en que nos relacionamos influye en el malestar de cada uno. Por eso, en lugar de centrarnos en una sola persona, trabajamos con las relaciones.
+
+Puede ser útil en momentos de crisis o de cambio, como un nacimiento, una separación, un duelo o la adolescencia de un hijo; cuando la comunicación se ha vuelto difícil, o cuando el malestar de uno de los miembros está afectando a toda la familia. Según lo que necesitemos trabajar, a las sesiones puede acudir toda la familia o solo una parte.
 """
 
 [[extra.services]]
